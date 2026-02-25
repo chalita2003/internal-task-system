@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: internal_task_system
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./internal-task-backend/init.sql:/docker-entrypoint-initdb.d/init.sql
+    ports:
+      - "3307:3306"
+
+  backend:
+    build: ./internal-task-backend
+    environment:
+      DB_HOST: mysql
+      DB_USER: root
+      DB_PASSWORD: rootpassword
+      DB_NAME: internal_task_system
+      JWT_SECRET: your_super_secret_jwt_key_here_change_in_production
+    ports:
+      - "3001:3000"
+    depends_on:
+      - mysql
+
+  frontend:
+    build: ./internal-task-frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
+
+volumes:
+  mysql_data:
