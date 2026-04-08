@@ -47,20 +47,20 @@ CREATE TABLE approvals (
 
 -- Insert Users
 INSERT INTO users (id, name, email, password, role, department) VALUES
-(1, 'สมชาย ใจดี', 'somchai@company.com', '$2b$10$BBnWRNcAYncSE.LkDSc/r.UDvFOFzHiLGlJlD4ZoBa03VUBbjsiXq', 'employee', 'การตลาด'),
-(2, 'สมหญิง มั่นใจ', 'somying@company.com', '$2b$10$BBnWRNcAYncSE.LkDSc/r.UDvFOFzHiLGlJlD4ZoBa03VUBbjsiXq', 'manager', 'การตลาด'),
-(3, 'ผู้จัดการ ใหญ่', 'admin@company.com', '$2b$10$BBnWRNcAYncSE.LkDSc/r.UDvFOFzHiLGlJlD4ZoBa03VUBbjsiXq', 'admin', 'บริหาร'),
-(4, 'พนักงาน ขยัน', 'employee@company.com', '$2b$10$BBnWRNcAYncSE.LkDSc/r.UDvFOFzHiLGlJlD4ZoBa03VUBbjsiXq', 'employee', 'ขาย');
+(1, 'Somchai Jaidee', 'somchai@company.com', '$2b$10$BBnWRNcAYncSE.LkDSc/r.UDvFOFzHiLGlJlD4ZoBa03VUBbjsiXq', 'employee', 'Marketing'),
+(2, 'Somying Manjai', 'somying@company.com', '$2b$10$BBnWRNcAYncSE.LkDSc/r.UDvFOFzHiLGlJlD4ZoBa03VUBbjsiXq', 'manager', 'Marketing'),
+(3, 'Big Manager', 'admin@company.com', '$2b$10$BBnWRNcAYncSE.LkDSc/r.UDvFOFzHiLGlJlD4ZoBa03VUBbjsiXq', 'admin', 'Management'),
+(4, 'Hardworking Employee', 'employee@company.com', '$2b$10$BBnWRNcAYncSE.LkDSc/r.UDvFOFzHiLGlJlD4ZoBa03VUBbjsiXq', 'employee', 'Sales');
 
 -- Insert Tasks
 INSERT INTO tasks VALUES
-('t1','จัดทำรายงานยอดขายประจำเดือน','สรุปยอดขายทุกสาขาและวิเคราะห์แนวโน้ม','in-progress','high',1,2,'2026-02-28','2026-02-20'),
-('t2','ประชุมทีมการตลาด','วางแผนแคมเปญเดือนมีนาคม','todo','medium',1,2,'2026-02-26','2026-02-22'),
-('t3','ตรวจสอบสต็อกสินค้า','ตรวจนับสินค้าคงเหลือในคลังทุกรายการ','completed','low',4,2,'2026-02-24','2026-02-18');
+('t1','Prepare Monthly Sales Report','Summarize sales from all branches and analyze trends','in-progress','high',1,2,'2026-02-28','2026-02-20'),
+('t2','Marketing Team Meeting','Plan campaigns for March','todo','medium',1,2,'2026-02-26','2026-02-22'),
+('t3','Inventory Stock Check','Count remaining stock for all items in the warehouse','completed','low',4,2,'2026-02-24','2026-02-18');
 
 -- Insert Approvals
 INSERT INTO approvals VALUES
-('a1','ขอลาพักร้อน 3 วัน','ขอลาพักร้อนเพื่อไปเที่ยวกับครอบครัว วันที่ 5-7 มีนาคม 2026','leave','pending',1,NULL,NULL,NULL,'2026-02-23',NULL),
-('a2','ขออนุมัติซื้อคอมพิวเตอร์ใหม่','เครื่องเก่าใช้งานมา 5 ปี','purchase','approved',4,2,25000,'อนุมัติตามที่เสนอ','2026-02-20','2026-02-22'),
-('a3','ขอจัดสรรงบประมาณโฆษณา','ขอจัดสรรงบประมาณแคมเปญออนไลน์','budget','pending',1,NULL,50000,NULL,'2026-02-24',NULL),
-('a4','ขอลาป่วย','ป่วยเป็นไข้หวัด','leave','rejected',4,2,NULL,'ไม่มีวันลาคงเหลือ','2026-02-15','2026-02-16');
+('a1','Request for Annual Leave (3 days)','Vacation with family from March 5-7, 2026','leave','pending',1,NULL,NULL,NULL,'2026-02-23',NULL),
+('a2','New Computer Purchase Request','Current machine has been in use for 5 years','purchase','approved',4,2,25000,'Approved as requested','2026-02-20','2026-02-22'),
+('a3','Ad Budget Allocation','Requesting budget for online campaigns','budget','pending',1,NULL,50000,NULL,'2026-02-24',NULL),
+('a4','Sick Leave Request','Fever and flu symptoms','leave','rejected',4,2,NULL,'No remaining leave days available','2026-02-15','2026-02-16');
